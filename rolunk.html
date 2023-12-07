@@ -1,0 +1,110 @@
+<!DOCTYPE HTML>
+<HTML lang="hu">
+
+<head>
+    <meta charset="utf-8">
+    <title>Kaland birodalom</title>
+    <link rel="icon" type="image/x-icon" href="képek/favicon_barna.png">
+
+    <meta name="author" content="Beniczky Tamás">
+    <meta name="copyright" content="Csak oktatási célokra">
+    <meta name="description" content="Kalandpark honlapja">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="egyéb/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nova+Square&display=swap" rel="stylesheet">
+    <script src="egyéb/jquery-3.7.1.min.js"></script>
+    <script src="egyéb/galleria-1.6.1/dist/galleria.min.js"></script>
+    <script src="egyéb/galleria-1.6.1/dist/themes/classic/galleria.classic.min.js"></script>
+
+    <script>$(document).ready(function () {
+            $('#kepek_rolunk').galleria(
+                width = 500,
+                height = 500
+            );
+        });
+
+    </script>
+
+    <style>
+        .galleria {
+            margin: auto;
+            width: 60vw;
+            height: 60vh;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="felso_resz">
+            <header>
+                <h1 id="focim">Kaland birodalom</h1>
+            </header>
+
+            <nav>
+                <ul>
+                    <li><a href="index.html">Üdvözlünk</a></li>
+                    <li><a href="oktatas.html">Oktatás</a></li>
+                    <li><a id="active" href="#">Rólunk</a></li>
+                    <li><a href="foglalas.html">Foglalás</a></li>
+                </ul>
+                <hr id="menu_vonal">
+            </nav>
+        </div>
+    </div>
+
+    <div class="konténer">
+
+        <!--SZÖVEGBOX-->
+
+        <section class="kepek_section">
+            <div class="kozepre javitva">
+                <div class="palya_box box_javitva">
+                    Üdvözöllek a Kalandpark Birodalomban, ahol az élmények és kalandok határtalan birodalma várja minden
+                    kalandvágyó lélekét. Az alapításunk hátterében a szenvedély és az életöröm áll. 10 éve nyitottuk meg
+                    kapuinkat annak érdekében, hogy egy olyan helyet teremtsünk, ahol mindenki megtalálhatja a számára
+                    legizgalmasabb kalandot.
+                </div>
+
+                <div class="palya_box box_javitva">
+                    Célunk, hogy egy olyan közösséget hozzunk létre, ahol az emberek szabadon kifejezhetik
+                    kalandvágyukat és
+                    felpezsdíthetik érzékeiket. Az alapítás pillanatától fogva az a küldetésünk, hogy összekötő híddá
+                    váljunk az
+                    emberek és az izgalmas kalandok között. Legyen az egy merész hegymászás, egy szédítő kötélpálya,
+                    vagy egy
+                    izgalmas erdei túra, célunk, hogy mindenki megtalálja a számára legmegfelelőbb kihívást.
+                </div>
+
+                <div class="palya_box box_javitva">
+                    A Kalandpark Birodalom nem csupán egy hely, hanem egy életstílus. Egy olyan hely, ahol a kalandoknak
+                    és az
+                    élményeknek csak a képzelet szabhat határt. Csatlakozz hozzánk, és fedezd fel velünk a végtelen
+                    lehetőségeket, amik a kalandok birodalmában rejlenek!
+                </div>
+
+            </div>
+        </section>
+
+        <!--GALÉRIA-->
+
+        <article id="kepek_rolunk" class="galleria">
+            <img src="képek/istockphoto-1006191306-612x612.jpg" alt="Rólunk" title="Ügyességi pálya">
+            <img src="képek/istockphoto-1321100847-612x612.jpg" alt="Rólunk" title="Gyerekpálya">
+            <img src="képek/istockphoto-1368780326-612x612.jpg" alt="Rólunk" title="Szép környezet">
+            <img src="képek/istockphoto-501094334-612x612.jpg" alt="Rólunk" title="Kötélhíd">
+            <img src="képek/istockphoto-892956450-612x612.jpg" alt="Rólunk" title="Fiataloknak">
+            <img src="képek/istockphoto-928323838-612x612.jpg" alt="Rólunk" title="Családosoknak">
+            <img src="képek/istockphoto-999910750-612x612.jpg" alt="Rólunk" title="Fa gerendák">
+
+        </article>
+    </div>
+    <footer>Ez az oldal pusztán gyakorlásra szolgál</footer>
+</body>
+
+</HTML>

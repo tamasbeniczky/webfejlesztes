@@ -1,0 +1,158 @@
+<!DOCTYPE HTML>
+<HTML lang="hu">
+
+<head>
+    <meta charset="utf-8">
+    <title>Kaland birodalom</title>
+    <link rel="icon" type="image/x-icon" href="képek/favicon_barna.png">
+
+    <meta name="author" content="Beniczky Tamás">
+    <meta name="copyright" content="Csak oktatási célokra">
+    <meta name="description" content="Kalandpark honlapja">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="egyéb/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nova+Square&display=swap" rel="stylesheet">
+
+</head>
+<!--FOGLALÓS RÉSZ-->
+<script src="egyéb/jquery-3.7.1.min.js"></script>
+<script src="egyéb/jquery-validation-1.19.5/dist/jquery.validate.min.js"></script>
+<script id="formazas">
+    $(document).ready(function () {
+    $("#urlap").validate({
+        rules: {
+            knev: "required", // A "Keresztnév" mező
+            vnev: "required", // A "Vezetéknév" mező
+            emailcim: {
+                required: true,
+                email: true
+            },
+            telefonszam: {
+                    required: true,
+                    minlength: 6, // Minimum 9 karakter (az előtaggal együtt)
+                    maxlength: 12 // Maximum 13 karakter (az előtaggal együtt)
+                 },
+
+            elfogad: "required", // Az "Elfogad" checkbox
+            kezdes: "required",
+            
+        },
+        
+        messages: {
+            knev: "<span style='color: red;'> Írd be a keresztneved!</span>",
+            vnev: "<span style='color: red;'> Írd be a vezetékneved!</span>",
+            telefonszam: {
+                    required: "<span style='color: red;'> Add meg a telefonszámod!</span>",
+                    minlength: "<span style='color: red;'> A telefonszámnak minimum 6 karakter hosszúnak kell lennie!</span>",
+                    maxlength: "<span style='color: red;'> A telefonszámnak maximum 13 karakter hosszúnak kell lennie!</span>"
+            },
+            emailcim: "<span style='color: red;'> Kérlek valós email címet adj meg!</span>",
+            elfogad: "<span style='color: red;'> Kérlek fogadd el a feltételeinket!</span>",
+            kezdes: "<span style='color: red;'> Kérlek add meg a foglalás dátumát!</span>",
+        },
+    });
+});
+
+</script>
+
+<body>
+    <div class="container">
+        <div class="felso_resz">
+            <header>
+                <h1 id="focim">Kaland birodalom</h1>
+            </header>
+
+            <nav>
+                <ul>
+                    <li><a href="index.html">Üdvözlünk</a></li>
+                    <li><a href="oktatas.html" href="#">Oktatás</a></li>
+                    <li><a href="rolunk.html">Rólunk</a></li>
+                    <li><a id="active">Foglalás</a></li>
+                </ul>
+                <hr id="menu_vonal">
+            </nav>
+        </div>
+    </div>
+
+    <div class="container" id="urlapok">
+        <section class="ur">
+            <h3>Születésnapra, vagy nagy csoportnak lefoglalná az egész parkot? Keressen minket bizalommal!</h3>
+            <form method="post" action="http://szamtud.uni-corvinus.hu/receive.php" id="urlap" novalidate>
+                <p><label>Vezetéknév*<br><input type="text" name="vnev" id="vezeteknev" class="bemenet" for="lastname"><br></label></p>
+                <p><label>Keresztnév*<br><input type="text" name="knev" id="knev" class="bemenet"><br></label></p>
+                <p><label>Telefonszám*<br><input type="tel" name="telefonszam" placeholder="+36 20 123 4567"
+                            class="bemenet" id="telcsiszam"><br></label></p>
+                <p><label>Email-cím*<br><input type="email" name="emailcim" class="bemenet" id="emailnev"><br></label>
+                </p>
+                <p><label>Milyen alkalomból foglalnák le a parkot?<br><textarea name="milyenok"
+                            class="bemenet"></textarea></label></p>
+                <p><label>Van speciális igénye?<br><textarea name="specigeny" class="bemenet"></textarea></label>
+                </p>
+                <p><label>Foglalás időpontja*<br> <input type="date" name="kezdes"></label><br></p>
+                <p><label>Elfogadom a felhasználálsi feltételeket <input type="checkbox" name="elfogad"></label><br></p>
+                <input type="submit" value="Küldés" id="kuldes" class="gomb">
+            </form>
+        </section>
+
+        <!--ÁRAJÁNLAT-->
+
+        <section class="ur">
+
+            <h3>Bérelne felszerelést is? Válassza ki az árajánlathoz, hogy mire lenne szüksége!</h3>
+            <form method="post" action="#" id="arajanlat">
+
+                <p><label>Milyen méretet választana?<br>
+                        <select name="cucc_jelleg" size="1" id="cucc_merete">
+                            <option value="xs">xs</option>
+                            <option value="s">s</option>
+                            <option value="m">m</option>
+                            <option value="l">l</option>
+                            <option value="xl">xl</option>
+                            <option value="xxl">xxl</option>
+                        </select><br></label></p>
+                <p>Választott felszerelés(ek)*<br>
+                    <label> <input type="checkbox" name="sisak" id="sisak">sisak<br></label>
+                    <label> <input type="checkbox" name="beulo" id="beulo">beülő<br></label>
+                    <label> <input type="checkbox" name="kotel" id="kotel">kötél<br></label>
+                    <label> <input type="checkbox" name="cipo" id="cipo">cipő<br></label>
+                </p>
+                <p><label>Hány órára?<br> 1<input type="range" min="1" max="5" step="1" id="berles_hossz">5</label></p>
+                <p><label>Melyik városból jön?<br><input type="text" id="s_varos" name="place"
+                            class="bemenet" placeholder="pl.: Budapest"><br></label></p>
+
+                <p><label>Bérelt felszerelések száma: <input type="number" min="1" max="30" id="szam"></label></p>
+                <p>Szín<br>
+                    <label><input type="radio" name="szin" id="pr">piros<br></label>
+                    <label><input type="radio" name="szin" id="k">kék<br></label>
+                    <label> <input type="radio" name="szin" id="zd">zöld<br></label>
+                    <label> <input type="radio" name="szin" id="sg">sárga<br></label>
+                    <label> <input type="radio" name="szin" id="fkt">fekete<br></label>
+                    <label> <input type="radio" name="szin" id="fh">fehér<br></label>
+                    <label> <input type="radio" name="szin" id="lil">lila<br></label>
+                    <label> <input type="radio" name="szin" id="rose">rózsaszín<br></label>
+                </p>
+                <p>Csoporttal van?<br>
+                    <label><input type="radio" name="csopi" value="igen" id="yes">Igen<br></label>
+                    <label></label><input type="radio" name="csopi" value="nem" id="not">Nem</label>
+                </p>
+                <p>
+                <p>Volt már nálunk?<br>
+                    <label><input type="radio" name="voltnalunk" value="igen" id="regi">Igen<br></label>
+                    <label></label><input type="radio" name="voltnalunk" value="nem" id="uj">Nem</label>
+                </p><br>
+                <input type="button" name="kuldes" value="Tovább az árhoz" class="gomb" id="start">
+                <input type="reset" class="gomb" value="Törles">
+                <h4 id="kiiras"></h4>
+            </form>
+        </section>
+
+        <footer>Ez az oldal pusztán gyakorlásra szolgál</footer>
+
+        <script src="egyéb/javascript.js"></script>
+
+</body>
+
+</HTML>
