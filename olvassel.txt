@@ -1,6 +1,6 @@
 1. Oldal készítője: Beniczky Tamás
 
-2. Weblap címe: https://github.com/tamasbeniczky/webfejlesztes/
+2. Weblap címe: https://github.com/tamasbeniczky/webfejlesztes.git
 
 3. Weboldal témája: A weboldal témája egy kalandpark. A weboldalon lehet tájékozódni a különböző pályákról, azok tulajdonságairól. Tanulmányozható a kalandpark használatának szabálya, illetve lehetséges időpontot foglalni, felszerelést bérelni.
 
